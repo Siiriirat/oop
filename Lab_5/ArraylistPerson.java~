@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+public class ArraylistPerson
+{
+  private ArrayList<Person> items;
+  public ArraylistPerson(){  
+    items = new ArrayList<Person>();  
+  }
+  public void addPerson(Person theItem){  
+    items.add(theItem);
+  }
+  public void list()
+  {  
+    System.out.println("Print List");
+    for(Person item : items)
+    {
+       
+        System.out.println("Name : "+item.getName() +" | AGE : "+ item.getAge()+" | Faculty : "
+                           + item.getFaculty() +"| EmployeeId : "+item.getemployeeId() 
+                             +" | ContractSalary : "  + item.getConsalary() +" | PermanentSalary : "+ item.getPersalary() );
+      }
+  } 
+}

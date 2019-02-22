@@ -1,0 +1,5 @@
+public class NumberException extends RuntimeException{
+ public ModulusZeroException(){
+  
+ }
+}

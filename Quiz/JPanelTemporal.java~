@@ -1,0 +1,32 @@
+    public class JPanelTemporal extends javax.swing.JPanel {
+    public JPanelTemporal() {
+            initComponents();
+        }
+     public void setDuration(int duration){
+        this.jSpinnerDuration.setValue(duration);
+        }
+        public Time getTime(){
+        Time time = new ElementTime((Integer)jSpinnerDuration.getValue(),
+            (Integer)jSpinnerProbability.getValue(),
+            (Integer)jSpinnerStart.getValue());
+            return time;              
+        }
+        //
+        Here i add this to Handle the error
+        try{
+        temp = JOptionPane.showInputDialog();
+            ElementTime = Integer.parseInt(temp);
+            if (ElementTime < 0) {
+                throw new IllegalArgumentException();
+            }
+            outputMessage = "The duration time must be a positive number!";
+            JOptionPane.showMessageDialog(null, outputMessage);
+        }
+        catch( InputMismatchException e)    
+    {
+        JOptionPane.showMessageDialog();
+        }//end catch
+        catch( IllegalArgumentException e)
+    {
+    JOptionPane.showMessageDialog(null, outputMessage);
+        }//end catch

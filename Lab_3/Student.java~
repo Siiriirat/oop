@@ -1,0 +1,53 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class Student {
+  public static void main(String[] args) { 
+    
+  }
+  protected String stCode; // student code 
+  protected String name;  
+  protected double gpa;
+  public Student() { }
+  public Student(String c, String nm){
+   stCode = c;
+   name = nm;
+  }
+  public Student(String c, String nm, double g){
+   stCode = c;
+   name = nm;
+   gpa = g;
+  }
+  public String getCode(){
+   return stCode;
+  }
+  public String getName( ){
+   return name;
+  }
+  public double getGPA( ) {
+   return gpa;
+  }
+  public void setGPA(double g){
+   gpa = g;
+  }
+  public String toString( ){
+   String s = stCode + " " + name + " " + gpa;
+   return s;
+  }
+
+  /* ADD YOUR CODE HERE */
+  private ArrayList<Student> stlist = new ArrayList<Student> ();
+  
+  public Student(){
+  }
+  public void addstudent(Student st){
+    this.stlist.add(st);
+  }
+  public void removeStudentBystCode(String code){
+  for(int i = 0; i < stlist.size() ; i++)
+   {
+    if(stlist.get(i).getCode() == code)
+      stlist.remove(i);
+   }
+  }
+}
